@@ -8,9 +8,7 @@ export default {
     },
 
     addTicket: (req, res) => {
-        let reqContent = req.body
-
-        let { creatorId, title, content, allowedUsers } = reqContent
+        let { creatorId, title, content, allowedUsers } = req.body
 
         if (!creatorId || !title || !content || !allowedUsers) {
             res.status(400)
@@ -25,5 +23,21 @@ export default {
         })
 
         res.send(ticket)
+    },
+
+    deleteTicket: (req, res) => {
+        let { ticketId } = req.body
+        if (!ticketId) {
+            res.status(400)
+            res.send("not all the must be fields are in the request")
+        }
+
+        ReduxStore.dispatch({
+            type: "deleteTicket",
+            ticketId: ticketId
+        })
+
+        res.send("deleted successfully")
     }
+
 }

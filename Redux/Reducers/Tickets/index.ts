@@ -9,5 +9,6 @@ const actions = {
 
 const handlers = {}
 handlers[actions.NEW] = TicketsHandlers.newTicket
+handlers[actions.DElETE] = TicketsHandlers.deleteTicket
 
 export default reducerFactory(Configuration.reduxTicketInitialState, handlers)

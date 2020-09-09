@@ -1,6 +1,6 @@
 
 import Configuration from '../../Configuration'
-import jwt from 'jsonwebtoken'
+import * as jwt from 'jsonwebtoken'
 
 function signToken(username) {
     return jwt.sign(username, Configuration.jwtSecret)
@@ -27,7 +27,7 @@ function verifyToken(req, res, next) {
     })
 }
 
-module.exports = {
+export default {
     signToken,
     verifyToken
 }
