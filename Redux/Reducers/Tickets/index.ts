@@ -2,12 +2,11 @@ import reducerFactory from '../../ReducerFactory'
 import TicketsHandlers from './TicketsHandlers';
 
 const actions = {
-    NEW: 'new',
-    DElETE: 'delete'
+    NEW: 'newTicket',
+    DElETE: 'deleteTicket'
 }
 
 const handlers = {}
 handlers[actions.NEW] = TicketsHandlers.newTicket
-
 
 export default reducerFactory({ tickets: [] }, handlers)

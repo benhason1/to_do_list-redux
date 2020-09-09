@@ -1,12 +1,12 @@
 export default class Ticket {
-    creator: User
+    creatorId: String
     title: String
     content: String
     allowedUsers: String[]
-    constructor(creator: User, title: String, content: String, allowedUsers: String[]) {
-        this.creator = creator
+    constructor(creatorId: String, title: String, content: String, allowedUsers: String[]) {
+        this.creatorId = creatorId
         this.title = title
-        this.content = content
+        this.content = content  
         this.allowedUsers = allowedUsers
     }
 }

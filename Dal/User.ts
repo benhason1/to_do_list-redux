@@ -1,4 +1,4 @@
-class User {
+export default class User {
     username: String
     password: String
     // need to add jwt token on creating user
