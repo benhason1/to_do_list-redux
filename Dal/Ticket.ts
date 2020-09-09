@@ -1,12 +1,12 @@
 export default class Ticket {
-    creator: String
+    creator: User
     title: String
     content: String
-    constructor(creator: String, title: String, content: String) {
+    allowedUsers: String[]
+    constructor(creator: User, title: String, content: String, allowedUsers: String[]) {
         this.creator = creator
         this.title = title
         this.content = content
+        this.allowedUsers = allowedUsers
     }
 }
-
-let a = new Ticket("ad","asd","asd")

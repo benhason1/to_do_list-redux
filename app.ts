@@ -1,1 +1,1 @@
-import configuration from './Configuration'
+import Configuration from './Configuration'
