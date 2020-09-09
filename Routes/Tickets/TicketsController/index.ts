@@ -1,10 +1,25 @@
-import Configuration from '../../../Configuration'
-import ReduxStore from '../../../Redux'
-import Ticket from '../../../Dal/Ticket'
+import ReduxStore from '../../../Redux';
+import Ticket from '../../../Dal/Ticket';
 
 export default {
     getTickets: (req, res) => {
-        res.send(ReduxStore.getState().TicketReducer)
+        let currentTickets = ReduxStore.getState().TicketReducer.tickets
+        let currentAllowedTickets = {}
+        if (!currentTickets)
+            res.send(currentAllowedTickets)
+
+        for (let boardKey of Object.keys(currentTickets)) {
+            let boardTickets = currentTickets[boardKey]
+
+            if (!boardTickets)
+                continue
+
+            currentAllowedTickets[boardKey] = boardTickets.filter((ticket) => {
+                return ticket.content.allowedUsers.includes(req.user.content.username)
+            })
+        }
+
+        res.send(currentAllowedTickets)
     },
 
     addTicket: (req, res) => {

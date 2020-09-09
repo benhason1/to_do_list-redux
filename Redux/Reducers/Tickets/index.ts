@@ -1,6 +1,6 @@
-import reducerFactory from '../../ReducerFactory'
+import reducerFactory from '../../ReducerFactory';
 import TicketsHandlers from './TicketsHandlers';
-import Configuration from '../../../Configuration'
+import Configuration from '../../../Configuration';
 
 const actions = {
     NEW: 'newTicket',

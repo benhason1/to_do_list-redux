@@ -1,5 +1,5 @@
-import { v4 } from "uuid"
-import { stat } from "fs"
+import { v4 } from "uuid";
+import { stat } from "fs";
 
 export default {
     newTicket: (state, action) => {

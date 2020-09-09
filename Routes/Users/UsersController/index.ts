@@ -1,6 +1,5 @@
-import Configuration from '../../../Configuration'
-import ReduxStore from '../../../Redux'
-import User from '../../../Dal/User'
+import ReduxStore from '../../../Redux';
+import User from '../../../Dal/User';
 
 export default {
     createUser: (req, res) => {
