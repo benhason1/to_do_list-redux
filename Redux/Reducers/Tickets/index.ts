@@ -1,5 +1,6 @@
 import reducerFactory from '../../ReducerFactory'
 import TicketsHandlers from './TicketsHandlers';
+import Configuration from '../../../Configuration'
 
 const actions = {
     NEW: 'newTicket',
@@ -9,4 +10,4 @@ const actions = {
 const handlers = {}
 handlers[actions.NEW] = TicketsHandlers.newTicket
 
-export default reducerFactory({ tickets: [] }, handlers)
+export default reducerFactory(Configuration.reduxTicketInitialState, handlers)
